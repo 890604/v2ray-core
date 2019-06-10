@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This file is accessible as https://install.direct/go.sh
-# Original source is located at github.com/v2ray/v2ray-core/release/install-release.sh
+# This file is accessible as https://github.com/890604/v2/go.sh
+# Original source is located at github.com/890604/v2ray-core/release/install-release.sh
 
 # If not specify, default meaning of return value:
 # 0: Success
@@ -124,9 +124,9 @@ downloadV2Ray(){
     rm -rf /tmp/v2ray
     mkdir -p /tmp/v2ray
     if [[ "${DIST_SRC}" == "jsdelivr" ]]; then
-        DOWNLOAD_LINK="https://cdn.jsdelivr.net/gh/v2ray/dist/v2ray-linux-${VDIS}.zip"
+        DOWNLOAD_LINK="https://cdn.jffsdelivr.net/gh/v2ray/dist/v2ray-linux-${VDIS}.zip"
     else
-        DOWNLOAD_LINK="https://github.com/v2ray/v2ray-core/releases/download/${NEW_VER}/v2ray-linux-${VDIS}.zip"
+        DOWNLOAD_LINK="https://github.com/890604/v2/v2ray-core/releases/download/${NEW_VER}/v2ray-linux-${VDIS}.zip"
     fi
     colorEcho ${BLUE} "Downloading V2Ray: ${DOWNLOAD_LINK}"
     curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
@@ -210,7 +210,7 @@ getVersion(){
         if [[ ${CUR_VER} != v* ]]; then
             CUR_VER=v${CUR_VER}
         fi
-        TAG_URL="https://api.github.com/repos/v2ray/v2ray-core/releases/latest"
+        TAG_URL="https://api.github.com/890604/v2ray/v2ray-core/releases/latest"
         NEW_VER=`curl ${PROXY} -s ${TAG_URL} --connect-timeout 10| grep 'tag_name' | cut -d\" -f4`
         if [[ ${NEW_VER} != v* ]]; then
           NEW_VER=v${NEW_VER}
